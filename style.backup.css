@@ -1,0 +1,106 @@
+
+.top-header.row {
+    display:none;
+}
+.absp-cat {
+    display: none;
+}
+.post.category-music {
+    background-image: url(http://ruku.io/wp-content/uploads/2019/05/muz.png);
+    background-repeat:no-repeat;
+    background-size:55px;
+    background-position: 99% 10%;
+}
+
+.post.category-literature {
+    background-image: url(http://ruku.io/wp-content/uploads/2019/05/literature-1.png);
+    background-repeat:no-repeat;
+    background-size:55px;
+    background-position: 99% 10%;
+}
+
+.post.category-photo-montage {
+    background-image: url(http://ruku.io/wp-content/uploads/2019/05/pic.png);
+    background-repeat:no-repeat;
+    background-size:55px;
+    background-position: 99% 10%;
+}
+
+.post.category-video {
+    background-image: url(http://ruku.io/wp-content/uploads/2019/05/vid.png);
+    background-repeat:no-repeat;
+    background-size:55px;
+    background-position: 99% 10%;
+}
+.widget_recent_entries li::before {
+    display:none;
+}
+.site-info {
+    display:none;
+}
+
+.cat-item.cat-item-1 {
+    display:none;
+}
+
+.author.vcard {
+    text-transform:capitalize;
+}
+
+article.list-style-post {
+    cursor:pointer;
+}
+.home article:first-of-type {
+    background: #fff !important;
+}
+.home article:first-of-type .post-meta{
+    display:none
+}
+body article h2 a.post-title-standard:hover {
+    color:#000;
+}
+
+figure img {
+    cursor: pointer;
+}
+
+.home #recent-posts-2 {
+    display:none;
+}
+
+.posts-layout .post {
+    transition: all .4s ease;
+}
+
+
+li.labs {
+    background: #000;
+}
+li.labs a {
+    color: #00ff00 !important;
+}
+@media only screen and (max-width: 991px) {
+    aside#secondary {
+        position: static;
+    }
+    #search-2 {
+        position: absolute;
+        top: 97px;
+        background: transparent;
+        right: 0;
+    }
+}
+
+body.post-template-default.single .post {
+    background-position: 99% 1%;
+}
+
+
+@media only print {
+    aside, #comments, #bottom-footer, .nav-previous, .nav-next {
+        display: none;
+    }
+    #primary {
+        width: 100% !important;
+    }
+}
