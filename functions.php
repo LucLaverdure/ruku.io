@@ -95,6 +95,18 @@ function gmcustom_my_ajax_handler() {
                 $content .= '</div>';
                 echo $content;
             }
+        } else if ( in_category('music', $post_id) ) {
+            $content = '<div class="cat-music">';
+            $content .= '<h2 style="margin-bottom: 30px;">' . get_the_title($post_id) . '</h2>';
+            $content .= get_post_field('post_content', $post_id);
+            $content .= '</div>';
+            echo $content;
+        } else if ( in_category('video', $post_id) ) {
+            $content = '<div class="cat-music">';
+            $content .= '<h2>' . get_the_title($post_id) . '</h2>';
+            $content .= apply_filters( 'the_content', get_post_field( 'post_content', $post_id ) );
+            $content .= '</div>';
+            echo $content;
         } else {
             echo 'coming soon.';
         }

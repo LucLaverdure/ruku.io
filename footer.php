@@ -15,13 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
 		</div><!-- .container -->
 	</div><!-- #content -->
 
-	<?php do_action('greatmag_before_footer'); ?>
-	
-	<footer id="colophon" class="site-footer">
-		<?php do_action('greatmag_footer'); ?>
-	</footer><!-- #colophon -->
 
-	<?php do_action('greatmag_after_footer'); ?>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

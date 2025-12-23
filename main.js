@@ -29,6 +29,13 @@ $(document).ready(function() {
         let $this = $(this);
         let this_id = $this.attr('data-id');
         let category = $this.attr('data-type');
+
+        if (category == 'labs') {
+            let link = $this.attr('data-link');
+            window.open(link, '_blank');
+            return;
+        }
+
         $('#lightbox .lightbox-body').html('');
         $('#matrixSpinner').show();
 

@@ -123,6 +123,7 @@ p.subtitle {
     box-shadow: 0 0 12px rgba(0, 170, 255, 0.15);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     cursor: pointer;
+    max-width:700px;
 }
 
 .tile:hover {
@@ -252,6 +253,7 @@ p {
     box-shadow: 0 0 20px rgba(0,170,255,0.2);
 }
 
+/*
 .new {
     position: absolute;
     top: 10px;
@@ -265,6 +267,48 @@ p {
     box-shadow: 0 0 8px rgba(0,170,255,0.4);
     z-index: 9;
 }
+*/
+
+/* "NEW" badge box */
+.tile .new {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #ff5252; /* Bright accent color — adjust to match theme palette */
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    padding: 4px 8px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    animation: fadeInNew 0.6s ease-out;
+}
+
+/* Optional glossy diagonal ribbon look */
+.tile .new::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.25) 0%, rgba(255,255,255,0) 60%);
+    border-radius: 3px;
+    pointer-events: none;
+}
+
+/* Subtle fade‑in on load */
+@keyframes fadeInNew {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Optional — dark theme alternative */
+body .tile .new {
+    background: #fff;
+    color: #111;
+}
+
 
 /* image inside tile override */
 .tile img.matrix-image {

@@ -27,7 +27,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
 
     <div class="head">
         <div class="col">
-            <img src="https://ruku.io/wp-content/uploads/2025/07/cropped-cropped-logo.jpg" alt="logo" class="logo" />
+            <a href="/"><img src="https://ruku.io/wp-content/uploads/2025/07/cropped-cropped-logo.jpg" alt="logo" class="logo" /></a>
         </div>
         <div class="col">
             <h1><a href="/">Ruku IO</a></h1>
