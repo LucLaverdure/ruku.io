@@ -1,0 +1,65 @@
+/*
+Theme Name: gmcustom
+Theme URI:  http://LucLaverdure.com
+Author:     Ruku
+Author URI: http://LucLaverdure.com
+Template:   greatmag
+Version:    1.0
+License:    GNU General Public License v2 or later
+*/
+
+@media only print {
+    body iframe {
+        display: none;
+    }
+    body pre, body .entry-content p {
+        line-height: 20px;
+        border: none;
+    }
+    body header#masthead {
+        display: none;
+    }
+    body .entry-meta {
+        display: none;
+    }
+    body footer {
+        display: none;
+    }
+    body nav {
+        display: none;
+    }
+    body.single header.entry-header {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    body article .post-main-image {
+        margin: 0;
+        padding: 0;
+    }
+    body article .post-main-image a::after {
+        display: none;
+    }
+    body article .entry-content figure a::after {
+        display: none;
+    }
+    body.post-template-default.single article.post {
+        padding-top: 0;
+    }
+}
+
+body #signature {
+    font-family: Parisienne;
+    font-size: 40px;
+    text-align: right;
+}
+body.single h1 {
+    font-family: Montserrat, serif;
+    text-transform: uppercase;
+}
+body pre, body .entry-content p {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+body .main-logo .media img {
+    margin-right:10px;
+}
