@@ -69,6 +69,9 @@ header.page-header {
 header.page-header h1 {
     color: #00aaff !important;
 }
+body h1 i {
+    color: #0fff;
+}
 aside {
     display: none;
 }

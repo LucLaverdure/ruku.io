@@ -123,3 +123,61 @@ function gmcustom_my_ajax_handler() {
 add_action('wp_ajax_pcontent', 'gmcustom_my_ajax_handler');
 // For guests (unauthenticated users)
 add_action('wp_ajax_nopriv_pcontent', 'gmcustom_my_ajax_handler');
+
+function get_rnd_hashtag() {
+    $funny_blog_hashtags = [
+        '#ICantBelieveIPostedThat',
+        '#Blogception',
+        '#WordsAndWit',
+        '#TypingMyFeelingsAgain',
+        '#BloggerProblems',
+        '#GrammarlySaveMe',
+        '#CoffeeAndContent',
+        '#MyBrainBuffering',
+        '#CtrlAltDelMyLife',
+        '#SarcasmIsMySecondLanguage',
+        '#IDeserveABookDeal',
+        '#NapFirstWriteLater',
+        '#WiFiAndWisdom',
+        '#SpilledMyThoughts',
+        '#BloggingFromTheCouch',
+        '#OopsIDidABlog',
+        '#IntrovertOnTheInternet',
+        '#KeyboardWarriorPoet',
+        '#404SleepNotFound',
+        '#TypingTillIDrop',
+        '#DoodlesAndDeepThoughts',
+        '#ArtisticOverthinker',
+        '#PixelPhilosophy',
+        '#ColorMeSarcastic',
+        '#MasterpieceInProgress',
+        '#DesigningMyExcuses',
+        '#MuseMissing',
+        '#BloggingThroughTheChaos',
+        '#CtrlZMyDecisions',
+        '#PaletteAndPunchlines',
+        '#TooTiredToInspire',
+        '#SendHelpSendCoffee',
+        '#MoodAF',
+        '#CurrentStatusTyping',
+        '#ProofreadThisPlease',
+        '#OopsThereGoesMyFilter',
+        '#ExistentialSnackBreak',
+        '#IDontDoMinimalism',
+        '#CreativeCaffeineAddict',
+        '#JustOneMoreParagraph',
+        '#LoadingThoughts',
+        '#PoweredByWiFi',
+        '#MyFileIsCorruptedLikeMe',
+        '#DebuggingMyLife',
+        '#BloggingInProgress',
+        '#404LogicNotFound',
+        '#InContentWeTrust',
+        '#AutoSaveMySoul',
+        '#RebootNeeded',
+        '#BufferingBrain',
+    ];
+
+        return $funny_blog_hashtags[array_rand($funny_blog_hashtags)];
+
+}

@@ -30,7 +30,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
             <a href="/"><img src="https://ruku.io/wp-content/uploads/2025/07/cropped-cropped-logo.jpg" alt="logo" class="logo" /></a>
         </div>
         <div class="col">
-            <h1><a href="/">Ruku IO</a></h1>
+
+            <?php
+                $random_hashtag = get_rnd_hashtag();
+            ?>
+
+            <h1><a href="/">Ruku IO <i><?php echo $random_hashtag; ?></i></a></h1>
             <p class="subtitle">Deodorize every day, change my shirt and fly away.</p>
         </div>
     </div>
