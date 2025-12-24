@@ -18,7 +18,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="<?php echo get_stylesheet_directory_uri(); ?>/main.js"></script>
 
-<?php wp_head(); ?>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ruku.io/" />
+    <meta property="og:title" content="ruku.io — Creative Blog" />
+    <meta property="og:description" content="Deodorize every day, change my shirt and fly away." />
+    <meta property="og:image" content="https://ruku.io/wp-content/uploads/2025/12/Screenshot-2025-12-23-at-8.09.26-PM-1.png" />
+    <meta property="og:site_name" content="ruku.io" />
+
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -27,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
 
     <div class="head">
         <div class="col">
-            <a href="/"><img src="https://ruku.io/wp-content/uploads/2025/07/cropped-cropped-logo.jpg" alt="logo" class="logo" /></a>
+            <a href="/"><img src="https://ruku.io/wp-content/uploads/2025/07/cropped-cropped-logo.jpg" alt="logo" class="logo matrix-image" /></a>
         </div>
         <div class="col">
 
@@ -35,7 +42,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
                 $random_hashtag = get_rnd_hashtag();
             ?>
 
-            <h1><a href="/">Ruku IO <i><?php echo $random_hashtag; ?></i></a></h1>
+            <h1><a href="/">Ruku IO</a></h1>
+            <div class="hashtag">
+                <i><?php echo $random_hashtag; ?></i>
+            </div>
             <p class="subtitle">Deodorize every day, change my shirt and fly away.</p>
         </div>
     </div>
