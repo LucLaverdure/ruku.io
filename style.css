@@ -63,7 +63,12 @@ body .main-logo .media img {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Parisienne:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
  */
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
-
+header.page-header {
+    margin: 0 30px;
+}
+header.page-header h1 {
+    color: #00aaff !important;
+}
 aside {
     display: none;
 }
@@ -532,6 +537,7 @@ div.head {
 }
 
 .search-box input {
+    display: inline-block;
     background: rgba(0, 10, 25, 0.7);
     border: 1px solid rgba(0, 170, 255, 0.5);
     border-radius: 5px;
@@ -544,7 +550,29 @@ div.head {
     width: 180px;
     box-shadow: 0 0 12px rgba(0, 170, 255, 0.15);
 }
+.search-box input[type='submit'] {
+    width: 80px;
+    line-height: 15px;
+}
 
+@media (max-width: 1400px) {
+    body .search-box {
+        position: static;
+        display: block;
+        flex-grow: 1;
+        margin-left:20px;
+    }
+}
+@media (max-width: 768px) {
+    body .search-box {
+        margin-top: 0;
+    }
+}
+@media (max-width: 1400px) {
+    body .search-box input[type="text"] {
+        max-width: 140px;
+    }
+}
 .search-box input::placeholder {
     color: #ccc;
     letter-spacing: 1px;

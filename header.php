@@ -86,7 +86,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
             </ul>
 
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search..." />
+                <form action="/" method="get">
+                    <input name="s" type="text" id="searchInput" placeholder="Search..." />
+                    <input type="submit" value="Seek" />
+                </form>
             </div>
         </div>
     </nav>
