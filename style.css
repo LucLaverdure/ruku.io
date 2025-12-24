@@ -456,6 +456,12 @@ body .tile .new {
     }
 }
 
+@media (max-width: 550px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* single column on small screens */
+        padding: 0 15px;
+    }
+}
 
 /* ===== Mobile Layout ===== */
 @media (max-width: 768px) {
