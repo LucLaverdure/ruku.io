@@ -1,6 +1,4 @@
-todo:
-- search
-- category pages
-- add labs content
-- fix search
-- remove links from within content.
+TO DO:
+- remove links from within content. (old galleries aren't working)
+- put hover banner down instead of up
+- increase font size for things like date hover
