@@ -84,3 +84,36 @@ $(document).ready(function() {
         $('#lightbox').fadeOut(200);
     });
 });
+
+// lazy loading
+$(function() {
+  const $tiles = $(".tile");
+
+  if ('IntersectionObserver' in window) {
+    let observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          const $tile = $(entry.target);
+          const $img = $tile.find(".lazy");
+
+          if ($img.length) {
+            // There’s an image to lazy‑load
+            $img.attr("src", $img.data("src"));
+            $img.on("load", function() {
+              setTimeout(() => $tile.addClass("loaded"), i * 50);
+            });
+          } else {
+            // No image → fade in immediately
+            setTimeout(() => $tile.addClass("loaded"), i * 50);
+          }
+
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    $tiles.each(function() {
+      observer.observe(this);
+    });
+  }
+});

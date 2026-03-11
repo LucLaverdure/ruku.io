@@ -46,9 +46,9 @@ if ( $post_date > $one_month_ago ) {
             if ( has_post_thumbnail() ) {
             ?>
 
-            <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>"
+            <img data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>"
                  alt="<?php the_title(); ?>"
-                 class="matrix-image"
+                 class="matrix-image lazy"
                  loading="lazy">
             <?php
             } else {
@@ -80,6 +80,18 @@ if ( $post_date > $one_month_ago ) {
             <div class="written">
                 <h2 style="margin-bottom:30px;"><?php the_title(); ?></h2>
                 <div class="content">
+                    <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    width="64"
+                    height="64"
+                    fill="none"
+                    >
+                    <!-- Circle background -->
+                    <circle cx="32" cy="32" r="30" fill="#f0f0f0" stroke="#333" stroke-width="2"/>
+                    <!-- Play triangle -->
+                    <polygon points="26,20 26,44 46,32" fill="#333"/>
+                    </svg>
                     <?php
                     $html = apply_filters('the_content', get_the_content());
                     echo remove_links_but_keep_contents( $html );
@@ -100,9 +112,9 @@ if ( $post_date > $one_month_ago ) {
             if ( has_post_thumbnail() ) {
                 ?>
 
-                <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>"
+                <img data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>"
                      alt="<?php the_title(); ?>"
-                     class="matrix-image"
+                     class="matrix-image lazy"
                      loading="lazy">
                 <?php
             } else {
@@ -152,9 +164,9 @@ if ( $post_date > $one_month_ago ) {
             if ( has_post_thumbnail() ) {
                 ?>
 
-                <img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>"
+                <img data-src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>"
                      alt="<?php the_title(); ?>"
-                     class="matrix-image"
+                     class="matrix-image lazy"
                      loading="lazy">
                 <?php
             } else {

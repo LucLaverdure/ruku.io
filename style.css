@@ -817,3 +817,30 @@ div.head {
     max-width:400px;
     margin: 0 auto;
 }
+.tile {
+  background-color: #010d22;
+  opacity: 0;
+  transition: opacity 1s ease;
+  display: inline-block;
+}
+
+.tile.loaded {
+  opacity: 1;
+}
+
+.tile img {
+  display: block;
+  max-width: 100%;
+}
+
+.tile[data-type="music"] {
+    text-align: center;
+}
+
+.tile[data-type="music"] figure {
+    display: none;
+}
+
+.tile[data-type="music"] svg {
+    margin-top:50px;
+}
