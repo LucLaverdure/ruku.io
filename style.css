@@ -734,8 +734,8 @@ body #page .nav-bar {
       #00ffcc
     );
     animation:
-      spin 1.2s linear infinite,
-      pulse 1.8s ease-in-out infinite;
+      spin 0.8s linear infinite,
+      pulse 0.7s ease-in-out infinite;
   }
 
   #matrixSpinner #spin-inner::before {

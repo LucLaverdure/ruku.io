@@ -107,8 +107,11 @@ $(document).ready(function() {
         e.preventDefault();
         e.stopPropagation();
         const $tile = $(this).closest('.tile');
-        const $url = window.location.origin + '/#' + $tile.attr('data-slug');
-        
+        let $url = window.location.origin + '/#' + $tile.attr('data-slug');
+        if ($tile.attr('data-link').length > 0) {
+            $url = $tile.attr('data-link');
+        }
+
         copyToClipboard($url);
         
         const $btn = $(this);
