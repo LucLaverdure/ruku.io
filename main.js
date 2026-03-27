@@ -108,7 +108,7 @@ $(document).ready(function() {
         e.stopPropagation();
         const $tile = $(this).closest('.tile');
         let $url = window.location.origin + '/#' + $tile.attr('data-slug');
-        if ($tile.attr('data-link').length > 0) {
+        if ($tile.attr('data-link')) {
             $url = $tile.attr('data-link');
         }
 
