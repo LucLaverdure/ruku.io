@@ -13,14 +13,36 @@ $post_date = get_the_date('U'); // UNIX timestamp of publish date
 $one_month_ago = strtotime('-1 month');
 $new_html = '';
 if ( $post_date > $one_month_ago ) {
-    $new_html = '<div class="new">NEW</div>';
+    $new_html = '<div class="ribbon ribbon-top-left"><span>NEW</span></div>';
 }
 
+$slug = get_post_field( 'post_name', get_post() );
+$copy_button = '<svg 
+  xmlns="http://www.w3.org/2000/svg" 
+  viewBox="0 0 24 24" 
+  width="24" 
+  height="24" 
+  fill="none" 
+  stroke="currentColor" 
+  stroke-width="2" 
+  stroke-linecap="round" 
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+>
+  <!-- Clipboard back -->
+  <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+  <!-- Clipboard front (overlapping shadow) -->
+  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+</svg>';
 ?>
 <?php if (in_category('literature')): ?>
-<div class="tile" data-type="scribble"  data-id="<?php echo  get_the_ID(); ?>">
+<div class="tile" data-type="scribble"  data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
+    <?php echo $new_html; ?>
+    <div class="overlay top">
+        <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+    </div>
     <div class="image-box">
-        <?php echo $new_html; ?>
         <div class="written">
             <h2><?php the_title(); ?></h2>
             <div class="content">
@@ -31,16 +53,20 @@ if ( $post_date > $one_month_ago ) {
             </div>
         </div>
     </div>
-    <div class="overlay">
+    <div class="overlay bottom">
         <div class="project-title"><?php the_title(); ?></div>
+        <button class="copy-btn"><?php echo $copy_button; ?></button>
     </div>
 </div>
 
 <?php elseif ( in_category('photo-montage') ) : ?>
 
-    <div class="tile" data-type="doodle" data-id="<?php echo  get_the_ID(); ?>">
+    <div class="tile" data-type="doodle" data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
+        <?php echo $new_html; ?>
+        <div class="overlay top">
+            <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+        </div>
         <div class="image-box">
-            <?php echo $new_html; ?>
             <?php
 
             if ( has_post_thumbnail() ) {
@@ -68,15 +94,18 @@ if ( $post_date > $one_month_ago ) {
 
             ?>
         </div>
-        <div class="overlay">
+        <div class="overlay bottom">
             <div class="project-title"><?php the_title(); ?></div>
-            <div class="date"><?php the_modified_date('d/m/Y'); ?></div>
+            <button class="copy-btn"><?php echo $copy_button; ?></button>
         </div>
     </div>
 <?php elseif ( in_category('music') ) : ?>
-    <div class="tile" data-type="music"  data-id="<?php echo  get_the_ID(); ?>">
+    <div class="tile" data-type="music"  data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
+        <?php echo $new_html; ?>
+        <div class="overlay top">
+            <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+        </div>
         <div class="image-box">
-            <?php echo $new_html; ?>
             <div class="written">
                 <h2 style="margin-bottom:30px;"><?php the_title(); ?></h2>
                 <div class="content">
@@ -99,13 +128,17 @@ if ( $post_date > $one_month_ago ) {
                 </div>
             </div>
         </div>
-        <div class="overlay">
+        <div class="overlay bottom">
             <div class="project-title"><?php the_title(); ?></div>
+            <button class="copy-btn"><?php echo $copy_button; ?></button>
         </div>
     </div>
 <?php elseif ( in_category('video') ) : ?>
-    <div class="tile" data-type="video" data-id="<?php echo  get_the_ID(); ?>">
+    <div class="tile" data-type="video" data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
         <?php echo $new_html; ?>
+        <div class="overlay top">
+            <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+        </div>
         <div class="image-box">
             <?php
 
@@ -134,9 +167,9 @@ if ( $post_date > $one_month_ago ) {
 
             ?>
         </div>
-        <div class="overlay">
+        <div class="overlay bottom">
             <div class="project-title"><?php the_title(); ?></div>
-            <div class="date"><?php the_modified_date('d/m/Y'); ?></div>
+            <button class="copy-btn"><?php echo $copy_button; ?></button>
         </div>
     </div>
 <?php elseif ( in_category('labs') ) : ?>
@@ -156,9 +189,12 @@ if ( $post_date > $one_month_ago ) {
     }
 
     ?>
-    <div class="tile" data-type="labs" data-id="<?php echo  get_the_ID(); ?>" data-link="<?php echo $first_link_url; ?>">
+    <div class="tile" data-type="labs" data-id="<?php echo  get_the_ID(); ?>" data-link="<?php echo $first_link_url; ?>"  data-slug="<?php echo $slug; ?>">
+        <?php echo $new_html; ?>
+        <div class="overlay top">
+        <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+        </div>
         <div class="image-box">
-            <?php echo $new_html; ?>
             <?php
 
             if ( has_post_thumbnail() ) {
@@ -185,6 +221,10 @@ if ( $post_date > $one_month_ago ) {
             }
 
             ?>
+        </div>
+        <div class="overlay bottom">
+            <button class="copy-btn"><?php echo $copy_button; ?></button>
+            <div class="project-title"><?php the_title(); ?></div>
             <div class="new-tab"><svg
                         class="icon-newtab"
                         xmlns="http://www.w3.org/2000/svg"
@@ -200,10 +240,7 @@ if ( $post_date > $one_month_ago ) {
                             fill="#fff"
                     />
                 </svg></div>
-        </div>
-        <div class="overlay">
-            <div class="project-title"><?php the_title(); ?></div>
-            <div class="date"><?php the_modified_date('d/m/Y'); ?></div>
+
         </div>
     </div>
 <?php endif; ?>

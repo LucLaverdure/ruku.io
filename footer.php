@@ -30,13 +30,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
     </div>
 </div>
 
-<div class="matrix-spinner" id="matrixSpinner" style="display: none;">
-    <div class="matrix-core"></div>
-    <div class="matrix-ring">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-    </div>
-</div>
+<div class="matrix-spinner" id="matrixSpinner" style="display: none;"><div id="spin-inner"></div></div>
 
 </body>
 </html>

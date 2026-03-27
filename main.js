@@ -1,4 +1,15 @@
 
+function copyToClipboard(text) {
+  navigator.clipboard.writeText(text)
+    .then(() => {
+      
+    })
+    .catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+}
+
+
 $(document).ready(function() {
 
     $('.portfolio-grid img:not(.matrix-image)').addClass('matrix-image');
@@ -82,6 +93,22 @@ $(document).ready(function() {
     $('.lightbox-close, #lightbox').on('click', function(e) {
         if (e.target !== this) return; // only close if background or ×
         $('#lightbox').fadeOut(200);
+    });
+
+    if (window.location.hash) {
+        const hash = window.location.hash.substring(1); // remove #
+        const $targetTile = $(`.tile[data-slug="${hash}"]`);
+        if ($targetTile.length) {
+            $targetTile.trigger('click');
+        }
+    }
+
+    $('.copy-btn').on('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const $tile = $(this).closest('.tile');
+        const $url = window.location.origin + '/#' + $tile.attr('data-slug');
+        copyToClipboard($url);
     });
 });
 
