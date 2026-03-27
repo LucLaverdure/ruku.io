@@ -108,7 +108,15 @@ $(document).ready(function() {
         e.stopPropagation();
         const $tile = $(this).closest('.tile');
         const $url = window.location.origin + '/#' + $tile.attr('data-slug');
+        
         copyToClipboard($url);
+        
+        const $btn = $(this);
+        $btn.addClass('flash-bg');                // trigger flash
+        $btn.removeClass('flash');             // reset animation
+        const el = $btn.get(0);
+        el.offsetWidth;                        // force reflow
+        $btn.addClass('flash');                // trigger flash
     });
 });
 

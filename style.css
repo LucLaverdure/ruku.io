@@ -557,6 +557,9 @@ div.head {
         font-size: 0.9rem;
     }
 }
+body #page .nav-bar {
+    z-index: 999999;    
+}
 @media (max-width: 768px) {
     body .nav-bar {
         background: none;
@@ -772,6 +775,21 @@ div.head {
       opacity: 0.85;
     }
   }
+
+.flash-bg {
+  background-color: #f8c200; /* your initial color */
+  transition: background-color 0.3s ease;
+}
+
+.flash-bg.flash {
+  animation: flashGreen 0.4s ease;
+}
+
+@keyframes flashGreen {
+  0%   { background-color: #00c853; }
+  50%  { background-color: #00c853; } /* bright green */
+  100% { background-color: #f8c200; }
+}
 
 .copy-btn {
     position: absolute;
