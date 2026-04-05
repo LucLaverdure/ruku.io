@@ -40,11 +40,16 @@ $(document).ready(function() {
         let $this = $(this);
         let this_id = $this.attr('data-id');
         let category = $this.attr('data-type');
+        let slug = $this.attr('data-slug');
 
         if (category == 'labs') {
             let link = $this.attr('data-link');
             window.open(link, '_blank');
             return;
+        }
+
+        if (slug) {
+            window.location.hash = slug;
         }
 
         $('#lightbox .lightbox-body').html('');
