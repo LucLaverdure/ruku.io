@@ -83,8 +83,10 @@ $copy_button = '<svg
                     <h2><?php the_title(); ?></h2>
                     <div class="content">
                         <?php
-                            $html = apply_filters('the_content', get_the_content());
-                            echo remove_links_but_keep_contents( $html );
+                        $html = apply_filters('the_content', get_the_content());
+                        // $html = remove_links_but_keep_contents($html);
+                        // $html = replace_figures_with_thumbnails($html); 
+                        echo remove_links_but_keep_contents( $html );
                         ?>
                     </div>
                 </div>
@@ -121,10 +123,6 @@ $copy_button = '<svg
                     <!-- Play triangle -->
                     <polygon points="26,20 26,44 46,32" fill="#333"/>
                     </svg>
-                    <?php
-                    $html = apply_filters('the_content', get_the_content());
-                    echo remove_links_but_keep_contents( $html );
-                    ?>
                 </div>
             </div>
         </div>

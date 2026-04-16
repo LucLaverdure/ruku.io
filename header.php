@@ -30,6 +30,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // <- correct
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+<div class="matrix-spinner" id="matrixSpinner"><div id="spin-inner"></div></div>
+
 <div id="page" data-bodyimg="<?php header_image(); ?>" class="site">
 
     <div class="head">

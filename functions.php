@@ -181,3 +181,59 @@ function get_rnd_hashtag() {
         return $funny_blog_hashtags[array_rand($funny_blog_hashtags)];
 
 }
+
+function replace_figures_with_thumbnails($content) {
+    $dom = new DOMDocument();
+    libxml_use_internal_errors(true);
+    $dom->loadHTML(mb_convert_encoding($content, 'HTML-ENTITIES', 'UTF-8'), LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+    libxml_clear_errors();
+    
+    // Find all figure elements
+    $xpath = new DOMXPath($dom);
+    $figures = $xpath->query('//figure[contains(@class, "wp-block-image")]');
+    
+    foreach ($figures as $figure) {
+        // Find the img tag inside the figure
+        $imgs = $figure->getElementsByTagName('img');
+        
+        if ($imgs->length > 0) {
+            $img = $imgs->item(0);
+            
+            // Get attachment ID from data-id or class
+            $attachment_id = $img->getAttribute('data-id');
+            
+            if (!$attachment_id) {
+                // Try to extract from class like "wp-image-613"
+                $class = $img->getAttribute('class');
+                if (preg_match('/wp-image-(\d+)/', $class, $matches)) {
+                    $attachment_id = $matches[1];
+                }
+            }
+            
+            // Get thumbnail URL from WordPress
+            if ($attachment_id) {
+                $thumbnail = wp_get_attachment_image_src($attachment_id, 'medium');
+                
+                if ($thumbnail) {
+                    $img->setAttribute('data-src', $thumbnail[0]);
+                    $img->setAttribute('width', $thumbnail[1]);
+                    $img->setAttribute('height', $thumbnail[2]);
+                    $img->setAttribute('height', $thumbnail[2]);
+                    $img->setAttribute('class', 'matrix-image lazy');
+                    $img->setAttribute('loading', 'lazy');}
+            }
+            
+            // Remove srcset and sizes attributes (prevents loading large images)
+            $img->removeAttribute('srcset');
+            $img->removeAttribute('sizes');
+            
+            // Clone the img node
+            $new_img = $img->cloneNode(true);
+            
+            // Replace the entire figure with just the img
+            $figure->parentNode->replaceChild($new_img, $figure);
+        }
+    }
+    
+    return $dom->saveHTML();
+}

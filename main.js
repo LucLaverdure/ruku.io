@@ -130,6 +130,7 @@ $(document).ready(function() {
 
 // lazy loading
 $(function() {
+  $('#matrixSpinner').hide();
   const $tiles = $(".tile");
 
   if ('IntersectionObserver' in window) {
