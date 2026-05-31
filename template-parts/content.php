@@ -40,7 +40,7 @@ $copy_button = '<svg
 <div class="tile" data-type="scribble"  data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
     <?php echo $new_html; ?>
     <div class="overlay top">
-        <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+        <div class="date"><?php the_time('F d, Y'); ?></div>
     </div>
     <div class="image-box">
         <div class="written">
@@ -64,7 +64,7 @@ $copy_button = '<svg
     <div class="tile" data-type="doodle" data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
         <?php echo $new_html; ?>
         <div class="overlay top">
-            <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+            <div class="date"><?php the_time('F d, Y'); ?></div>
         </div>
         <div class="image-box">
             <?php
@@ -105,7 +105,7 @@ $copy_button = '<svg
     <div class="tile" data-type="music"  data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
         <?php echo $new_html; ?>
         <div class="overlay top">
-            <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+            <div class="date"><?php the_time('F d, Y'); ?></div>
         </div>
         <div class="image-box">
             <div class="written">
@@ -135,7 +135,7 @@ $copy_button = '<svg
     <div class="tile" data-type="video" data-id="<?php echo  get_the_ID(); ?>" data-slug="<?php echo $slug; ?>">
         <?php echo $new_html; ?>
         <div class="overlay top">
-            <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+            <div class="date"><?php the_time('F d, Y'); ?></div>
         </div>
         <div class="image-box">
             <?php
@@ -190,7 +190,7 @@ $copy_button = '<svg
     <div class="tile" data-type="labs" data-id="<?php echo  get_the_ID(); ?>" data-link="<?php echo $first_link_url; ?>"  data-slug="<?php echo $slug; ?>">
         <?php echo $new_html; ?>
         <div class="overlay top">
-        <div class="date"><?php the_modified_date('F d, Y'); ?></div>
+            <div class="date"><?php the_time('F d, Y'); ?></div>
         </div>
         <div class="image-box">
             <?php
